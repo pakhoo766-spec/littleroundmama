@@ -1,0 +1,329 @@
+/* 小圓頭媽媽｜加固指南賣頁 — 港式小店風（唔似英文數碼產品站） */
+:root {
+  --paper: #f6f1e8;
+  --ink: #1a1a1a;
+  --ink-soft: #4a453e;
+  --line: #d4cbbd;
+  --stamp: #8b2e2e;
+  --stamp-bg: #f3e4e0;
+  --tea: #2f5d4a;
+  --tea-soft: #e4efe9;
+  --btn: #1a1a1a;
+  --btn-text: #f6f1e8;
+  --warn: #fff8e7;
+  --warn-line: #d9b56a;
+  --font: "PingFang HK", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--stamp); }
+
+.wrap {
+  width: min(640px, 90%);
+  margin: 0 auto;
+}
+
+/* 報紙頭／印章感 masthead */
+.masthead {
+  padding: 22px 0 16px;
+  border-bottom: 2px solid var(--ink);
+}
+.stamp {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.12em;
+  color: var(--stamp);
+  border: 2px solid var(--stamp);
+  padding: 4px 12px;
+  border-radius: 4px;
+  transform: rotate(-1.5deg);
+  background: var(--stamp-bg);
+}
+.mast-line {
+  margin: 12px 0 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+
+.lead {
+  padding: 36px 0 28px;
+}
+.kicker {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  color: var(--tea);
+  font-weight: 700;
+}
+.lead h1 {
+  margin: 0 0 16px;
+  font-size: clamp(1.45rem, 5.2vw, 1.95rem);
+  line-height: 1.35;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+.lead-body {
+  margin: 0 0 24px;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+}
+.lead-body strong { color: var(--ink); }
+
+.price-box {
+  background: #fff;
+  border: 1.5px solid var(--ink);
+  padding: 16px 18px;
+  margin-bottom: 18px;
+}
+.price-main {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.price-main em {
+  font-style: normal;
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin-left: 4px;
+}
+.price-sub {
+  margin-top: 4px;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: var(--btn);
+  color: var(--btn-text) !important;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.08rem;
+  padding: 15px 20px;
+  border-radius: 2px;
+  border: 2px solid var(--ink);
+  letter-spacing: 0.04em;
+}
+.btn:active { opacity: 0.88; }
+
+.fine {
+  margin: 12px 0 0;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.block {
+  padding: 8px 0 28px;
+}
+.block h2 {
+  margin: 0 0 14px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  border-left: 4px solid var(--stamp);
+  padding-left: 10px;
+}
+
+.pain {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.pain li {
+  padding: 12px 14px 12px 40px;
+  position: relative;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+.pain li:last-child { border-bottom: none; }
+.pain li::before {
+  content: "·";
+  position: absolute;
+  left: 16px;
+  top: 10px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--stamp);
+  line-height: 1;
+}
+
+.toc {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: toc;
+}
+.toc li {
+  counter-increment: toc;
+  position: relative;
+  padding: 14px 14px 14px 52px;
+  margin-bottom: 8px;
+  background: var(--tea-soft);
+  border-left: 3px solid var(--tea);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+.toc li b {
+  display: block;
+  color: var(--ink);
+  margin-bottom: 2px;
+  font-size: 1rem;
+}
+.toc li::before {
+  content: counter(toc, decimal-leading-zero);
+  position: absolute;
+  left: 12px;
+  top: 14px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--tea);
+  letter-spacing: -0.02em;
+}
+
+.who-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 18px 16px;
+}
+.who-name {
+  margin: 0 0 8px;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--stamp);
+}
+.who-card p:last-child {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+
+.disclaimer {
+  background: var(--warn);
+  border: 1px solid var(--warn-line);
+  padding: 14px 16px;
+  font-size: 0.86rem;
+  color: #5a4a2e;
+}
+.disclaimer strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #3d3220;
+  font-size: 0.92rem;
+}
+.disclaimer p { margin: 0; }
+
+.buy-again {
+  text-align: center;
+  padding-bottom: 36px;
+}
+.buy-again h2 {
+  border-left: none;
+  padding-left: 0;
+  text-align: center;
+}
+.buy-again-price {
+  margin: 0 0 14px;
+  color: var(--ink-soft);
+}
+
+footer {
+  border-top: 2px solid var(--ink);
+  padding: 22px 0 40px;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+footer p { margin: 0 0 6px; }
+
+/* 多謝頁 */
+.thanks {
+  padding: 40px 0 24px;
+  text-align: center;
+}
+.thanks .ok-tag {
+  display: inline-block;
+  background: var(--tea-soft);
+  color: var(--tea);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  margin-bottom: 12px;
+  border: 1px solid var(--tea);
+}
+.thanks h1 {
+  margin: 0 0 12px;
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+.thanks .lead-body {
+  text-align: left;
+  max-width: 36em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.steps {
+  counter-reset: s;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.steps li {
+  counter-increment: s;
+  padding: 12px 14px 12px 48px;
+  position: relative;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-soft);
+}
+.steps li:last-child { border-bottom: none; }
+.steps li::before {
+  content: counter(s);
+  position: absolute;
+  left: 14px;
+  top: 12px;
+  width: 1.5em;
+  height: 1.5em;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-ghost {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 12px;
+  background: transparent;
+  color: var(--ink) !important;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 12px 20px;
+  border: 1.5px solid var(--ink);
+  border-radius: 2px;
+}
+.download-box {
+  background: #fff;
+  border: 1.5px solid var(--ink);
+  padding: 20px 16px;
+  text-align: center;
+}
